@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adeniyi Martins — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <canvas id="dot-field"></canvas>
+
+    <!-- NAV -->
+<!-- TOP BAR -->
+    <div class="card-nav-container">
+        <nav class="card-nav" id="cardNav">
+            <div class="card-nav-top">
+                <div class="hamburger-menu" id="hamburgerMenu" onclick="toggleCardNav()" role="button" aria-label="Open menu" tabindex="0">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+                <div class="logo-container">Martins<span class="logo-accent">.WebDeveloper</span> </div>
+
+                <div class="card-nav-actions" style="display:flex; align-items:center; gap:0.6rem;">
+                    <a href="https://github.com/martins-py" target="_blank" rel="noopener" class="social-icon-link" title="GitHub" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                    </a>
+                    <a href="https://ng.linkedin.com/in/osemilore-adeniyi-64800a400" target="_blank" rel="noopener" class="social-icon-link" title="LinkedIn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                    </a>
+                    <a href="Adeniyi_Martins_CV_Redesigned (1).docx" download="Adeniyi_Martins_CV_Redesigned.docx" class="resume-nav-btn" title="Download Resume">Resume ↓</a>
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">🌙</button>
+                    <button class="card-nav-cta-button" onclick="window.location.href='#contact'">Let's Talk</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeCardNav()"></div>
+
+    <!-- SIDEBAR NAV -->
+    <aside class="sidebar" id="cardNavContent">
+        <button class="sidebar-close" onclick="closeCardNav()" aria-label="Close menu">✕</button>
+
+        <div class="sidebar-card" style="background-color:#0d0d0d;">
+            <div class="sidebar-card-label">About</div>
+            <div class="sidebar-card-links">
+                <a class="sidebar-link" href="#about" onclick="closeCardNav()">↗ Bio</a>
+            </div>
+        </div>
+        <div class="sidebar-card sidebar-card--light" style="background-color:#f2f2f2;">
+            <div class="sidebar-card-label">Work</div>
+            <div class="sidebar-card-links">
+                <a class="sidebar-link" href="#projects" onclick="closeCardNav()">↗ Projects</a>
+                <a class="sidebar-link" href="#services" onclick="closeCardNav()">↗ Services</a>
+                <a class="sidebar-link" href="#skills" onclick="closeCardNav()">↗ Skills</a>
+                <a class="sidebar-link" href="Adeniyi_Martins_CV_Redesigned (1).docx" download="Adeniyi_Martins_CV_Redesigned.docx">↓ Resume</a>
+            </div>
+        </div>
+        <div class="sidebar-card" style="background-color:#1a1a1a;">
+            <div class="sidebar-card-label">Contact</div>
+            <div class="sidebar-card-links">
+                <a class="sidebar-link" href="mailto:adeniyim@acm.org">↗ Email</a>
+                <a class="sidebar-link" href="https://ng.linkedin.com/in/osemilore-adeniyi-64800a400" target="_blank">↗ LinkedIn</a>
+            </div>
+        </div>
+    </aside>
+
+    <div class="site">
+
+       <!-- HERO -->
+        <div class="hero">
+            <div class="hero-content">
+                <span class="hero-kicker">COMPUTER SCIENCE STUDENT</span>
+
+                <h1 class="hero-title">
+                    Hi, I'm <span class="hero-name-accent">Martins</span><br>
+                    Your <span class="hero-name-shimmer">Web Developer</span><br>
+                </h1>
+
+                <p class="hero-tagline"><span id="typedText"></span><span class="cursor">|</span></p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="hero-btn hero-btn-primary">My Projects →</a>
+                    <a href="#contact" class="hero-btn hero-btn-secondary">Let's Talk →</a>
+                    <a href="https://github.com/martins-py" target="_blank" rel="noopener" class="social-icon-link hero-social-icon" title="GitHub" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                    </a>
+                    <a href="https://ng.linkedin.com/in/osemilore-adeniyi-64800a400" target="_blank" rel="noopener" class="social-icon-link hero-social-icon" title="LinkedIn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num" data-target="50">0</span>+
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-target="2">0</span>
+                        <span class="stat-label">Organizations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num" data-target="6">0</span>
+                        <span class="stat-label">Core Skills</span>
+                    </div>
+                </div>
+            </div>
+
+           <div class="hero-visual">
+    <div class="orb-wrapper">
+        <canvas id="orbCanvas"></canvas>
+        <img src="martins.jpg" alt="Adeniyi Martins profile picture" class="hero-avatar-large">
+    </div>
+    <div class="badges hero-badges">
+        <span class="badge">ACM Member</span>
+        <span class="badge">ISIC Cardholder</span>
+    </div>
+</div>
+        </div>
+
+
+      <!-- ABOUT -->
+<section id="about">
+    <h2 class="about-title">About <span class="accent">Me</span></h2>
+    <p class="about-subtitle">Get to know me through <em>code</em></p>
+
+    <div class="about-grid">
+        <div class="code-window bento-card">
+            <div class="code-window-header">
+                <span class="code-dot code-dot-red"></span>
+                <span class="code-dot code-dot-yellow"></span>
+                <span class="code-dot code-dot-green"></span>
+                <span class="code-filename">martins.js</span>
+            </div>
+            <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">dev</span> = {
+  <span class="code-key">experience</span>: <span class="code-string">'4+ years'</span>,
+  <span class="code-key">websitesBuilt</span>: <span class="code-string">'Multiple'</span>,
+  <span class="code-key">skills</span>: {
+    <span class="code-key">frontend</span>: <span class="code-bool">true</span>,
+    <span class="code-key">backend</span>: <span class="code-bool">true</span>,
+    <span class="code-key">python</span>: <span class="code-bool">true</span>,
+    <span class="code-key">uiux</span>: <span class="code-bool">true</span>,
+    <span class="code-key">motionGraphics</span>: <span class="code-bool">true</span>,
+  },
+  <span class="code-key">projects</span>: [
+    <span class="code-string">'Portfolio Website'</span>,
+    <span class="code-string">'Pomodoro Timer'</span>,
+    <span class="code-string">'ISS Tracker'</span>,
+    <span class="code-string">'Billboard → Spotify Sync'</span>
+  ],
+  <span class="code-key">hardWorker</span>: <span class="code-bool">true</span>,
+  <span class="code-key">quickLearner</span>: <span class="code-bool">true</span>,
+  <span class="code-key">problemSolver</span>: <span class="code-bool">true</span>,
+
+  <span class="code-key">hireable</span>: <span class="code-keyword">function</span>() {
+    <span class="code-keyword">return</span> <span class="code-var">this</span>.hardWorker &&
+      <span class="code-var">this</span>.problemSolver &&
+      <span class="code-var">this</span>.projects.length >= <span class="code-num">3</span>;
+  },
+
+  <span class="code-key">connect</span>: <span class="code-keyword">function</span>() {
+    <span class="code-keyword">return</span> <span class="code-string">"Let's build something great together!"</span>;
+  }
+};</code></pre>
+        </div>
+
+        <div class="story-panel">
+            <h3>My Story</h3>
+            <p>
+                I'm a <strong>Computer Science student</strong> at the University of Ibadan
+                and an active member of the <strong>ACM</strong>. I work across the
+                <strong>full stack</strong>, but I'm happiest on the frontend — where
+                <em>code meets design</em> and interfaces come alive.
+            </p>
+            <p>
+                On the backend and automation side, I built a tool that scrapes the
+                <strong>Billboard Hot 100</strong> with <strong>BeautifulSoup</strong> and
+                syncs it straight into a <strong>Spotify</strong> playlist — no manual
+                updating, just a fresh chart-topping playlist on autopilot.
+            </p>
+            <p>
+                Outside of web dev, I do <strong>motion graphics</strong>: video editing, AI
+                upscaling, and frame interpolation in After Effects. I like that it makes me
+                think about timing and polish the same way good UI does.
+            </p>
+            <p>
+                In short: a full-stack-leaning student who codes with intent, automates the
+                boring stuff, and is always building the next thing.
+            </p>
+        </div>
+    </div>
+</section>
+        <!-- PROJECTS -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <p class="projects-intro">A mix of what I build day to day — AI-driven products, automation tools that run on their own, client websites, desktop apps, and the design work that shapes all of it before a line of code is written.</p>
+
+            <div class="projects-featured-grid">
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🤖</div>
+                        <div>
+                            <h4>AI SaaS Platform</h4>
+                            <span class="fp-kicker">Business Automation</span>
+                        </div>
+                    </div>
+                    <p>An AI-powered SaaS platform that helps businesses streamline operations, automate repetitive tasks, and make smarter, data-driven decisions — all from one intuitive dashboard.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">AI</span>
+                        <span class="tech-pill">SaaS</span>
+                        <span class="tech-pill">Automation</span>
+                        <span class="tech-pill">Dashboard</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">✈️</div>
+                        <div>
+                            <h4>Flight Price Tracker</h4>
+                            <span class="fp-kicker">Automation Tool</span>
+                        </div>
+                    </div>
+                    <p>Set a target price and a destination country code, and it keeps watching live fares through the Amadeus API in the background. The moment a flight drops to or below your target, it fires an email alert via SMTP — no more refreshing fare sites by hand.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Amadeus API</span>
+                        <span class="tech-pill">SMTP</span>
+                        <span class="tech-pill">Automation</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🌐</div>
+                        <div>
+                            <h4>Client &amp; Business Websites</h4>
+                            <span class="fp-kicker">Full-Stack / Freelance</span>
+                        </div>
+                    </div>
+                    <p>Designed and built multiple websites for outside clients — from business landing pages to full multi-page sites — handling layout, styling, responsiveness, and deployment end to end.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">HTML</span>
+                        <span class="tech-pill">CSS</span>
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">Full-Stack</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🎨</div>
+                        <div>
+                            <h4>UI/UX Design</h4>
+                            <span class="fp-kicker">Figma</span>
+                        </div>
+                    </div>
+                    <p>Every app and website I build starts as a design first — wireframes, layouts, and polished mockups in Figma — so the code always follows a clear visual plan instead of getting figured out on the fly.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">Figma</span>
+                        <span class="tech-pill">UI/UX</span>
+                        <span class="tech-pill">Product Design</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🎮</div>
+                        <div>
+                            <h4>Desktop Mini-Games</h4>
+                            <span class="fp-kicker">Tkinter GUI</span>
+                        </div>
+                    </div>
+                    <p>A set of small desktop games built with Python's Tkinter, focused on GUI event loops, real-time state, and rendering outside the browser.</p>
+                    <div class="fp-sub"><strong>Ping-Pong Game</strong> — real-time paddle and ball physics with score tracking.</div>
+                    <div class="fp-sub"><strong>Quiz Game</strong> — multiple-choice quiz flow with scoring and round logic.</div>
+                    <div class="fp-tags">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">Tkinter</span>
+                        <span class="tech-pill">GUI</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🌦️</div>
+                        <div>
+                            <h4>Weather App</h4>
+                            <span class="fp-kicker">API Integration</span>
+                        </div>
+                    </div>
+                    <p>A weather lookup tool built on the OpenWeatherMap API, pulling live conditions and forecasts for any location you search.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">OpenWeatherMap API</span>
+                    </div>
+                </div>
+
+                <div class="featured-project-card bento-card">
+                    <div class="fp-header">
+                        <div class="fp-icon">🛰️</div>
+                        <div>
+                            <h4>ISS Tracker</h4>
+                            <span class="fp-kicker">Automation Tool</span>
+                        </div>
+                    </div>
+                    <p>Sends an automated email alert whenever the International Space Station passes overhead your location.</p>
+                    <div class="fp-tags">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">API</span>
+                        <span class="tech-pill">SMTP</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="projects-subhead">Python Tools &amp; Scripts</h3>
+            <div class="projects-grid">
+                <div class="project-card bento-card">
+                    <div class="tag">Python</div>
+                    <h4>Pomodoro App</h4>
+                    <p>A productivity timer app built to help manage focused work sessions.</p>
+                </div>
+                <div class="project-card bento-card">
+                    <div class="tag">Python · Cryptography</div>
+                    <h4>Caesar Cipher Tool</h4>
+                    <p>Implements classic Caesar cipher encryption and decryption from scratch.</p>
+                </div>
+                <div class="project-card bento-card">
+                    <div class="tag">Python</div>
+                    <h4>Stock Price Tracker</h4>
+                    <p>Monitors and reports on live stock price movement.</p>
+                </div>
+                <div class="project-card bento-card">
+                    <div class="tag">Python</div>
+                    <h4>Password Generator &amp; Habit Tracker</h4>
+                    <p>A secure random password generator paired with a tool for tracking daily habits.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services">
+            <h2>Services</h2>
+            <p class="services-intro">Whether you need a full website built, a smoother interface designed, or your footage polished into something people actually want to watch — here's what I can help with.</p>
+            <div class="services-grid">
+                <div class="service-card bento-card">
+                    <div class="service-icon">🎨</div>
+                    <h4>UI/UX Design</h4>
+                    <p>Designing clean, intuitive interfaces that make digital products easy and enjoyable to use.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🖥️</div>
+                    <h4>Frontend Development</h4>
+                    <p>Turning designs into responsive, interactive websites and interfaces using HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🌐</div>
+                    <h4>Website Building</h4>
+                    <p>Building complete websites from the ground up — portfolios, landing pages, and client sites.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🎬</div>
+                    <h4>Video Editing</h4>
+                    <p>Editing polished, engaging videos using Adobe After Effects for a professional final cut.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">✨</div>
+                    <h4>AI Video Upscaling</h4>
+                    <p>Enhancing video quality and resolution using AI-powered upscaling tools.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🎞️</div>
+                    <h4>Frame Interpolation</h4>
+                    <p>Smoothing out motion in video footage for fluid, high-frame-rate playback.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🐍</div>
+                    <h4>Python Automation</h4>
+                    <p>Building scripts and small tools that automate repetitive tasks and save time.</p>
+                </div>
+                <div class="service-card bento-card">
+                    <div class="service-icon">🔧</div>
+                    <h4>And Many More</h4>
+                    <p>Have something else in mind? Reach out and let's talk through what you need.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills">
+            <div class="skills-header">
+                <span class="skills-eyebrow">My Arsenal</span>
+                <h2 class="skills-title scroll-float">Technical Skills</h2>
+                <span class="skills-title-line"></span>
+            </div>
+
+            <div class="skills-filters" role="tablist" aria-label="Skill categories">
+                <button type="button" class="skills-filter is-active" data-category="all">All <span class="skills-filter-count">8</span></button>
+                <button type="button" class="skills-filter" data-category="languages">Languages <span class="skills-filter-count">2</span></button>
+                <button type="button" class="skills-filter" data-category="web">Web Dev <span class="skills-filter-count">2</span></button>
+                <button type="button" class="skills-filter" data-category="creative">Creative Tools <span class="skills-filter-count">2</span></button>
+                <button type="button" class="skills-filter" data-category="practice">Tools &amp; Practice <span class="skills-filter-count">2</span></button>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card bento-card" data-category="languages">
+                    <div class="skill-icon" style="background:linear-gradient(135deg,#3776ab,#ffd43b);">Py</div>
+                    <div class="skill-card-name">Python</div>
+                </div>
+                <div class="skill-card bento-card" data-category="languages">
+                    <div class="skill-icon" style="background:#f7df1e; color:#1a1a1a;">JS</div>
+                    <div class="skill-card-name">JavaScript</div>
+                </div>
+                <div class="skill-card bento-card" data-category="web">
+                    <div class="skill-icon" style="background:linear-gradient(135deg,#e34f26,#1572b6);">&lt;/&gt;</div>
+                    <div class="skill-card-name">HTML &amp; CSS</div>
+                </div>
+                <div class="skill-card bento-card" data-category="web">
+                    <div class="skill-icon" style="background:#2b2b2b; border:0.5px solid var(--border);">🌐</div>
+                    <div class="skill-card-name">Full-Stack Dev</div>
+                </div>
+                <div class="skill-card bento-card" data-category="creative">
+                    <div class="skill-icon" style="background:linear-gradient(135deg,#00005b,#9999ff);">Ae</div>
+                    <div class="skill-card-name">After Effects</div>
+                </div>
+                <div class="skill-card bento-card" data-category="creative">
+                    <div class="skill-icon" style="background:linear-gradient(135deg,#7b2ff7,#f107a3);">✨</div>
+                    <div class="skill-card-name">AI Upscaling</div>
+                </div>
+                <div class="skill-card bento-card" data-category="practice">
+                    <div class="skill-icon" style="background:#f05033;">Git</div>
+                    <div class="skill-card-name">Git &amp; GitHub</div>
+                </div>
+                <div class="skill-card bento-card" data-category="practice">
+                    <div class="skill-icon" style="background:#2b2b2b; border:0.5px solid var(--border);">💡</div>
+                    <div class="skill-card-name">Problem Solving</div>
+                </div>
+            </div>
+
+            <div class="skills-footer">
+                <span><strong>4</strong> Categories</span>
+                <span class="skills-footer-dot">&bull;</span>
+                <span><strong>8</strong> Skills</span>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <p>LinkedIn: <a href="https://ng.linkedin.com/in/osemilore-adeniyi-64800a400">Martins Adeniyi</a></p>
+                <p>Phone: +234-9076145412</p>
+                <p>Email: <a href="mailto:adeniyim@acm.org">adeniyim@acm.org</a></p>
+            </div>
+
+            <form action="https://formspree.io/f/mkokevjd" method="POST" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">Your Name</label>
+                        <input type="text" id="username" name="username" placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@email.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Write your message here..."></textarea>
+                </div>
+                <input type="submit" value="Send Message" class="submit-btn">
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>© 2026 Adeniyi Martins</span>
+            <div class="footer-right">
+                <a href="https://github.com/martins-py" target="_blank" rel="noopener" class="social-icon-link" title="GitHub" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.05 11.05 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.12 3.04.74.8 1.18 1.83 1.18 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.07.78 2.15 0 1.55-.01 2.8-.01 3.18 0 .3.2.66.79.55C20.21 21.38 23.5 17.07 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                </a>
+                <a href="https://ng.linkedin.com/in/osemilore-adeniyi-64800a400" target="_blank" rel="noopener" class="social-icon-link" title="LinkedIn" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.95v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.27 2.38 4.27 5.47v6.27ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+                </a>
+                <a href="mailto:adeniyim@acm.org">adeniyim@acm.org</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.theme-toggle');
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙';
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️';
+            }
+        }
+
+        function toggleCardNav() {
+            const sidebar = document.getElementById('cardNavContent');
+            const overlay = document.getElementById('sidebarOverlay');
+            const hamburger = document.getElementById('hamburgerMenu');
+            const site = document.querySelector('.site');
+            const isOpen = sidebar.classList.contains('open');
+
+            if (isOpen) {
+                closeCardNav();
+            } else {
+                sidebar.classList.add('open');
+                overlay.classList.add('open');
+                hamburger.classList.add('open');
+                site.classList.add('blurred');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeCardNav() {
+            document.getElementById('cardNavContent').classList.remove('open');
+            document.getElementById('sidebarOverlay').classList.remove('open');
+            document.getElementById('hamburgerMenu').classList.remove('open');
+            document.querySelector('.site').classList.remove('blurred');
+            document.body.style.overflow = '';
+        }
+        // ── Typing animation ──
+        const typedPhrases = [
+            "Building responsive web experiences.",
+            "Exploring Python automation projects.",
+            "Studying Computer Science."
+        ];
+        let phraseIndex = 0, charIndex = 0, isDeleting = false;
+
+        function typeLoop() {
+            const el = document.getElementById('typedText');
+            const current = typedPhrases[phraseIndex];
+
+            if (!isDeleting) {
+                el.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === current.length) {
+                    isDeleting = true;
+                    setTimeout(typeLoop, 1800);
+                    return;
+                }
+            } else {
+                el.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % typedPhrases.length;
+                }
+            }
+
+            setTimeout(typeLoop, isDeleting ? 40 : 70);
+        }
+
+        // ── Stat count-up ──
+        function animateStats() {
+            document.querySelectorAll('.stat-num').forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                let count = 0;
+                const step = Math.max(1, Math.ceil(target / 30));
+                const interval = setInterval(() => {
+                    count += step;
+                    if (count >= target) {
+                        count = target;
+                        clearInterval(interval);
+                    }
+                    stat.textContent = count;
+                }, 40);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            typeLoop();
+            animateStats();
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="dotfield.js"></script>
+    <script src="magicbento.js"></script>
+    <script src="orb.js"></script>
+    <script src="skills.js"></script>
+    <script src="scrollfloat.js"></script>
+    <script src="scrollreveal.js"></script>
+
+</body>
+</html>
